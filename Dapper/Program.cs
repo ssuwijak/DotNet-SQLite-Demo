@@ -1,10 +1,11 @@
 ﻿using Dapper;
 using Microsoft.Data.Sqlite;
 
-string dbPath = "blogging.db";
+var folder = Environment.SpecialFolder.LocalApplicationData;
+var path = Environment.GetFolderPath(folder);
+var dbPath = Path.Join(path, "blogging.db");
 
 Console.WriteLine($"Database path: {dbPath}");
-
 
 Console.WriteLine("Query for blogs");
 

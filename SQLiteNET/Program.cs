@@ -1,6 +1,8 @@
 ﻿using SQLite;
 
-string dbPath = "blogging.db";
+var folder = Environment.SpecialFolder.LocalApplicationData;
+var path = Environment.GetFolderPath(folder);
+var dbPath = Path.Join(path, "blogging.db");
 
 var db = new SQLiteAsyncConnection(dbPath);
 
